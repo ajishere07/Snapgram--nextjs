@@ -16,9 +16,9 @@ const Header = () => {
         {/* left */}
         <div className="relative hidden lg:inline-grid  w-24 cursor-pointer">
           <Image
-            src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+            src="/../public/SnapGram.png"
             layout="fill"
-            objectFit="contain"
+            objectFit="cover"
           />
         </div>
         <div className="relative w-10 lg:hidden flex-shrink-0 cursor-pointer">
