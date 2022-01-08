@@ -9,22 +9,30 @@ import {
   PlusCircleIcon,
 } from "@heroicons/react/outline";
 import { signOut, useSession, signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const navigate = useRouter();
   const { data: session } = useSession();
   console.log(session);
   return (
     <div className="shadow-sm border-b bg-white z-50 sticky top-0 ">
       <div className="flex justify-between max-w-6xl mx-5 xl:mx-auto">
         {/* left */}
-        <div className="relative hidden lg:inline-grid  w-24 cursor-pointer">
+        <div
+          className="relative hidden lg:inline-grid  w-24 cursor-pointer"
+          onClick={() => navigate.push("/")}
+        >
           <Image
             src="/../public/SnapGram.png"
             layout="fill"
             objectFit="cover"
           />
         </div>
-        <div className="relative w-10 lg:hidden flex-shrink-0 cursor-pointer">
+        <div
+          className="relative w-10 lg:hidden flex-shrink-0 cursor-pointer"
+          onClick={() => navigate.push("/")}
+        >
           <Image
             src="https://cdn.freelogovectors.net/wp-content/uploads/2016/12/instagram-logo1.png"
             layout="fill"
@@ -46,7 +54,7 @@ const Header = () => {
         </div>
         {/* right */}
         <div className="flex items-center justify-end space-x-3">
-          <HomeIcon className="navBtn" />
+          <HomeIcon className="navBtn" onClick={() => navigate.push("/")} />
           <MenuIcon className="h-10 md:hidden cursor-pointer " />
 
           {session ? (
