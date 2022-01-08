@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSession } from "next-auth/react";
+import AddStory from "./AddStory";
 
 import Story from "./Story";
 const StoriesSection = () => {
@@ -73,9 +75,10 @@ const StoriesSection = () => {
       id: 12,
     },
   ]);
-
+  const { data: session } = useSession();
   return (
     <div className="flex space-x-2 p-6 bg-white mt-8 border-gray-200 border rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
+      {session && <AddStory img={session.user.image} />}
       {suggestion.map((profile) => (
         <Story
           key={profile.id}
