@@ -47,7 +47,7 @@ const Header = () => {
         {/* right */}
         <div className="flex items-center justify-end space-x-3">
           <HomeIcon className="navBtn" />
-          <MenuIcon className="h-10 md:hidden cursor:pointer " />
+          <MenuIcon className="h-10 md:hidden cursor-pointer " />
 
           {session ? (
             <>
